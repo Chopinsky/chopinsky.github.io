@@ -1,7 +1,9 @@
 {
   "name": "my-react-page",
   "version": "0.1.0",
+  "author": "Jacob Zuo",
   "private": true,
+  "homepage" : "http://chopinsky.github.io/mypage",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "react": "^15.6.1",
