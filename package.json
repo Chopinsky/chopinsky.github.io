@@ -1,21 +1,30 @@
 {
-  "name": "my-react-page",
+  "name": "jacob-page",
   "version": "0.1.0",
-  "author": "Jacob Zuo",
   "private": true,
-  "homepage": "https://chopinsky.github.io/",
   "dependencies": {
-    "gh-pages": "^1.0.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "postbuild": "mv ./build ./dist",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
