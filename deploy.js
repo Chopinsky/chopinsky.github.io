@@ -1,24 +1,17 @@
-const fs = require("fs");
+const ghpages = require("gh-pages");
 
-fs.readFile("./build/index.html", (err, buffer) => {
-  if (err) {
-    console.error(`Deployment failed: ${err}`);
-    return;
-  }
-
-  let content = buffer.toString();
-  if (content) {
-    content = content.split(`src="`).join('src="/build');
-    content = content.split(`ref="`).join('ref="/build');
-
-    console.log(content);
-  }
-
-  fs.writeFile("./index.html", content, err => {
+ghpages.publish(
+  "build",
+  {
+    branch: "master",
+    repo: "https://github.com/Chopinsky/chopinsky.github.io.git"
+  },
+  err => {
     if (err) {
-      console.error(`Failed to generated index.html: ${err}`);
-    } else {
-      console.log("The file has been saved!");
+      console.error(`Failed to publish: ${err}`);
+      return;
     }
-  });
-});
+
+    console.log("Published successfully!");
+  }
+);
